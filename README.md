@@ -39,6 +39,6 @@ tab 1: run ```python server.py```
 tab 2:run ```cloudflared tunnel --url http://localhost:8081```
 tab 3:run ```python generate.py```
 
-let the victim run "client.py" and finish
+let the client run "client.py" and finish
 
 -----------------------------------------------------------
