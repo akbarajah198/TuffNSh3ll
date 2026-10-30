@@ -21,11 +21,11 @@ STEP BY STEP (3 tab)
 
 DI SISI PENYERANG
 
-tab terminal 1: Jalankan server.py
+tab terminal 1: Jalankan ```python server.py```
 tab terminal 2: Jalankan command berikut -->
-          cloudflared tunnel --url http://localhost:8081
+          ```cloudflared tunnel --url http://localhost:8081```
 
-tab terminal 3: Jalankan generate.py
+tab terminal 3: Jalankan ```python generate.py```
 
  Biarkan korban menjalankan 'client.py' tadi
       biarkan koneksi TCP
@@ -35,9 +35,9 @@ tab terminal 3: Jalankan generate.py
                        # ENGLISH #
 Step By Step (3 tab)
 
-tab 1: run server.py
-tab 2:run cloudflared tunnel --url http://localhost:8081
-tab 3:run generate.py
+tab 1: run ```python server.py```
+tab 2:run ```cloudflared tunnel --url http://localhost:8081```
+tab 3:run ```python generate.py```
 
 let the victim run "client.py" and finish
 
